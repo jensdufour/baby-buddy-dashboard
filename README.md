@@ -236,7 +236,8 @@ This dashboard uses Baby Buddy's REST API. A few important details about the fil
 - Endpoints with `start`/`end` fields (feedings, sleep, tummy times) use `start_min`/`start_max` for date filtering
 - Endpoints with a `time` field (diaper changes, temperature) use `date_min`/`date_max`
 - All date filters expect **ISO 8601 datetime strings** (e.g., `2025-01-15T00:00:00`), not plain dates
-- Datetimes should be in **local time without a timezone suffix** so Baby Buddy interprets them in its configured timezone
+- Use an **explicit UTC offset or `Z`** for filters representing an exact instant, such as the rolling 24-hour sleep cutoff. Offset-free local timestamps can be ambiguous when daylight saving time ends.
+- Calendar-day boundaries use Baby Buddy's configured local timezone; do not append `Z` to a local wall-clock string without converting the actual instant.
 
 ## License
 
