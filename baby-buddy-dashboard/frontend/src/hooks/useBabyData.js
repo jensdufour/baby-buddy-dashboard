@@ -58,7 +58,7 @@ export function useBabyData() {
       const todayMax = `${todayStr}T23:59:59`;
 
       const twentyFourAgo = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-      const sleepMin = `${toLocalISODate(twentyFourAgo)}T${String(twentyFourAgo.getHours()).padStart(2, "0")}:${String(twentyFourAgo.getMinutes()).padStart(2, "0")}:00`;
+      const sleepMin = twentyFourAgo.toISOString();
 
       const weekAgo = new Date(now);
       weekAgo.setDate(weekAgo.getDate() - 6);
