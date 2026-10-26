@@ -13,6 +13,8 @@ jobs:
         working-directory: baby-buddy-dashboard/frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: b5fc0e9b30c2f80b3aeb72386307ee26ba7e702e
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -29,6 +31,8 @@ jobs:
         working-directory: baby-buddy-dashboard/backend
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: b5fc0e9b30c2f80b3aeb72386307ee26ba7e702e
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
