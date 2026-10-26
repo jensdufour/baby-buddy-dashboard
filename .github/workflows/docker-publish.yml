@@ -24,6 +24,7 @@ env:
 
 jobs:
   publish:
+    if: github.repository == 'mbentancour/baby-buddy-dashboard'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
